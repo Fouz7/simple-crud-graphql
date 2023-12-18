@@ -41,7 +41,7 @@ const Mutation = new GraphQLObjectType({
         args: {
           title: { type: new GraphQLNonNull(GraphQLString) },
           release_date: { type: new GraphQLNonNull(GraphQLString) },
-          platform: { type: new GraphQLNonNull(GraphQLString) },
+          platform: { type: new GraphQLNonNull(new GraphQLList(GraphQLString)) },
           publisher: { type: new GraphQLNonNull(GraphQLString) }
         },
         resolve(parent, args) {
